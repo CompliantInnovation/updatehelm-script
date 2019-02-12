@@ -80,7 +80,7 @@ read AUTO_COMMIT;
 
 if [ "$AUTO_COMMIT" = "y" ]; then
 	git commit -m "Auto Gen: Updated Helm tag from $chart_values_image_tag to $NEW_TAG";
-	return 0;
+	exit 0;
 fi
 
-return 0;
+exit 0;
