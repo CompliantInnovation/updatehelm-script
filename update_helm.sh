@@ -80,7 +80,8 @@ read AUTO_COMMIT;
 
 if [ "$AUTO_COMMIT" = "y" ]; then
 	git commit -m "Auto Gen: Updated Helm tag from $chart_values_image_tag to $NEW_TAG";
-	exit 0;
 fi
+
+helm upgrade "$DEPLOYMENT_NAME" "$CHART_DIR" --recreate-pods
 
 exit 0;
