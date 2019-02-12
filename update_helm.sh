@@ -61,12 +61,12 @@ NEW_IMAGE_URI="$chart_values_image_repository:$NEW_TAG"
 echo "${BLUE}Building Docker image...${NC}";
 
 # Build Docker Image
-#docker build -t "$NEW_IMAGE_URI" --build-arg SSH_PRIVATE_KEY="$(cat $SSH_PRIVATE_KEY_PATH)" .
+docker build -t "$NEW_IMAGE_URI" --build-arg SSH_PRIVATE_KEY="$(cat $SSH_PRIVATE_KEY_PATH)" .
 
-#echo "${BLUE}Pushing Docker image...${NC}";
+echo "${BLUE}Pushing Docker image...${NC}";
 
 # Push ECS image
-#ecs-cli push "$NEW_IMAGE_URI"
+ecs-cli push "$NEW_IMAGE_URI"
 
 # Update Chart values for new tag
 echo "${BLUE}New Chart Values:${NC}";
