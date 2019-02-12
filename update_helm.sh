@@ -79,7 +79,8 @@ echo "${BLUE}Do you want to automatically commit this file? (y/n)${NC}"
 read AUTO_COMMIT;
 
 if [ "$AUTO_COMMIT" = "y" ]; then
-	return $(git commit -m "Auto Gen: Updated Helm tag from $chart_values_image_tag to $NEW_TAG");
+	git commit -m "Auto Gen: Updated Helm tag from $chart_values_image_tag to $NEW_TAG";
+	return 0;
 fi
 
 return 0;
